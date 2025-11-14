@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Local Coffee Shop - Home</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .banner, .featured, .reviews, .news {
+      margin: 30px 0;
+      text-align: center;
+    }
+    .banner img, .featured img {
+      width: 80%;
+      border-radius: 8px;
+      max-width: 500px;
+      margin-bottom: 20px;
+    }
+    .review-card {
+      background: #fff;
+      padding: 12px 18px;
+      border-radius: 4px;
+      border-left: 4px solid #6f4e37;
+      margin: 10px auto;
+      max-width: 320px;
+      color: #3b2f2f;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Local Coffee Shop</h1>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="menu.html">Menu</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="events.html">Events</a>
+    </nav>
+  </header>
+  <main>
+    <!-- Dynamic Banner with Photo -->
+    <section class="banner">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80" alt="Coffee Shop Interior" />
+      <h2>Welcome to Your Neighborhood Coffee Stop</h2>
+      <p>Freshly brewed, locally sourced coffee in a cozy atmosphere. Open daily 7AM - 7PM.</p>
+    </section>
+
+    <!-- Featured Product/Offer with Photo -->
+    <section class="featured">
+      <h3>Try Our Signature Caramel Latte!</h3>
+      <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=800&q=80" alt="Caramel Latte" />
+      <p><em>Handcrafted with local milk and a swirl of caramel – perfect to start your day!</em></p>
+    </section>
+
+    <!-- Customer Reviews (Dynamic Content) -->
+    <section class="reviews">
+      <h3>What Our Customers Say</h3>
+      <div class="review-card">“Absolutely love the vibe and the coffee is always perfect!”<br>- Aarav</div>
+      <div class="review-card">“The best pastries in town. The caramel latte is a must!”<br>- Priya</div>
+      <div class="review-card">“Friendly staff and great place to work or catch up with friends.”<br>- Rahul</div>
+    </section>
+
+    <!-- Latest News/Events -->
+    <section class="news">
+      <h3>News & Events</h3>
+      <p><strong>Friday Jazz Night</strong> every Friday, 7 PM onwards. Join us for live music!</p>
+      <p><strong>Monthly Barista Workshop:</strong> Learn brewing tricks from our head barista. Register at the counter.</p>
+    </section>
+  </main>
+  <footer>
+    <small>© 2025 Local Coffee Shop</small>
+  </footer>
+</body>
+</html>
