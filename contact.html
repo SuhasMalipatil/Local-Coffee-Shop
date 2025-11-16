@@ -5,33 +5,285 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Local Coffee Shop - Contact Us</title>
   <link rel="stylesheet" href="styles.css" />
+  <!-- Page‑specific CSS only for contact page -->
+  <style>
+    .contact-wrapper {
+      max-width: 950px;
+      margin: 30px auto 80px auto;
+      padding: 20px;
+      background: #fff8f0;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+      display: flex;
+      gap: 25px;
+      align-items: stretch;
+    }
+
+    .contact-info {
+      flex: 1;
+      padding: 10px 5px 10px 10px;
+    }
+
+    .contact-info h2 {
+      margin-top: 0;
+      color: #6f4e37;
+      font-family: "Georgia", serif;
+    }
+
+    .contact-info p {
+      margin: 6px 0;
+    }
+
+    .contact-details {
+      margin-top: 15px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      padding: 8px 10px;
+      border-radius: 8px;
+      background: #f1e1d2;
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .contact-item:hover {
+      background: #e7d4c0;
+      transform: translateY(-2px);
+    }
+
+    .contact-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #6f4e37;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 10px;
+      font-size: 18px;
+      color: #fff;
+    }
+
+    .contact-text {
+      font-size: 14px;
+    }
+
+    .contact-form {
+      flex: 1.1;
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 18px 18px 22px 18px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-form::before {
+      content: "";
+      position: absolute;
+      right: -40px;
+      top: -60px;
+      width: 150px;
+      height: 150px;
+      background: radial-gradient(circle at center, #f0d4b5 0, #fff 60%);
+      opacity: 0.8;
+    }
+
+    .contact-form h3 {
+      margin-top: 0;
+      color: #6f4e37;
+      font-family: "Georgia", serif;
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-form small {
+      display: block;
+      margin-bottom: 15px;
+      color: #8b6b4c;
+      position: relative;
+      z-index: 1;
+    }
+
+    .form-row {
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .form-row label {
+      display: block;
+      font-size: 13px;
+      margin-bottom: 4px;
+      font-weight: bold;
+      color: #4b342f;
+    }
+
+    .form-row input,
+    .form-row textarea {
+      width: 100%;
+      padding: 8px 9px;
+      border-radius: 6px;
+      border: 1px solid #c7b1a0;
+      font-size: 14px;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+      box-sizing: border-box;
+      background: #fffaf4;
+    }
+
+    .form-row input:focus,
+    .form-row textarea:focus {
+      border-color: #6f4e37;
+      box-shadow: 0 0 0 2px rgba(111,78,55,0.15);
+      transform: translateY(-1px);
+    }
+
+    .form-row textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .contact-form button {
+      background-color: #6f4e37;
+      color: white;
+      padding: 9px 20px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 2px;
+      transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.15s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-form button:hover {
+      background-color: #553927;
+      transform: translateY(-1px);
+      box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+    }
+
+    .contact-form button span {
+      font-size: 16px;
+    }
+
+    /* Optional side image box */
+    .contact-image-box {
+      margin-top: 16px;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    .contact-image-box img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Responsive */
+    @media (max-width: 850px) {
+      .contact-wrapper {
+        flex-direction: column;
+        margin: 20px;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .contact-wrapper {
+        margin: 15px;
+        padding: 15px;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
     <h1>Local Coffee Shop</h1>
     <nav>
-      <a href="index.html">Home</a>
+      <a href="home.html">Home</a>
       <a href="about.html">About Us</a>
       <a href="menu.html">Menu</a>
       <a href="contact.html">Contact Us</a>
       <a href="events.html">Events</a>
     </nav>
   </header>
+
   <main>
-    <h2>Contact Us</h2>
-    <p>Address: 123 Coffee Street, Your City</p>
-    <p>Phone: +91 98765 43210</p>
-    <p>Email: info@localcoffeeshop.com</p>
-    <form>
-      <label for="name">Name:</label><br />
-      <input type="text" id="name" name="name" required /><br />
-      <label for="email">Email:</label><br />
-      <input type="email" id="email" name="email" required /><br />
-      <label for="message">Message:</label><br />
-      <textarea id="message" name="message" rows="4" required></textarea><br />
-      <button type="submit">Send</button>
-    </form>
+    <div class="contact-wrapper">
+      <!-- Left side: info + optional image -->
+      <section class="contact-info">
+        <h2>Visit or Contact Us</h2>
+        <p>Have a question, feedback, or a special request? Reach out and the team will get back to you soon.</p>
+        <div class="contact-details">
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div class="contact-text">
+              123 Coffee Street,<br />
+              Your City, India
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <div class="contact-text">
+              +91 98765 43210
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">✉️</div>
+            <div class="contact-text">
+              info@localcoffeeshop.com
+            </div>
+          </div>
+        </div>
+
+        <!-- Optional decorative image for contact page -->
+        <div class="contact-image-box">
+          <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=80" alt="Coffee shop interior" />
+        </div>
+      </section>
+
+      <!-- Right side: interactive form -->
+      <section class="contact-form">
+        <h3>Send a Message</h3>
+        <small>Fill in the details below and the shop will respond as soon as possible.</small>
+        <form>
+          <div class="form-row">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required />
+          </div>
+
+          <div class="form-row">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required />
+          </div>
+
+          <div class="form-row">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="What is this about?" />
+          </div>
+
+          <div class="form-row">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Type your message here..." required></textarea>
+          </div>
+
+          <button type="submit">
+            Send Message <span>➤</span>
+          </button>
+        </form>
+      </section>
+    </div>
   </main>
+
   <footer>
     <small>© 2025 Local Coffee Shop</small>
   </footer>
