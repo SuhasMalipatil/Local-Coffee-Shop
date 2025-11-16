@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Local Coffee Shop - Contact Us</title>
   <link rel="stylesheet" href="styles.css" />
+
   <!-- Page‑specific CSS only for contact page -->
   <style>
     .contact-wrapper {
@@ -121,6 +122,7 @@
       color: #4b342f;
     }
 
+    /* Animated inputs */
     .form-row input,
     .form-row textarea {
       width: 100%;
@@ -129,16 +131,50 @@
       border: 1px solid #c7b1a0;
       font-size: 14px;
       outline: none;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
       box-sizing: border-box;
       background: #fffaf4;
+      transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.15s ease,
+        background-color 0.25s ease;
+    }
+
+    .form-row input:hover,
+    .form-row textarea:hover {
+      border-color: #a57a55;
+      background-color: #fff5ea;
+      box-shadow: 0 0 0 1px rgba(165,122,85,0.3);
+      transform: translateY(-1px);
     }
 
     .form-row input:focus,
     .form-row textarea:focus {
       border-color: #6f4e37;
-      box-shadow: 0 0 0 2px rgba(111,78,55,0.15);
+      box-shadow:
+        0 0 0 2px rgba(111,78,55,0.25),
+        0 0 12px rgba(111,78,55,0.35);
+      animation: inputGlow 0.6s ease-out;
+      background-color: #fff;
       transform: translateY(-1px);
+    }
+
+    @keyframes inputGlow {
+      0% {
+        box-shadow:
+          0 0 0 0 rgba(111,78,55,0.0),
+          0 0 0 rgba(111,78,55,0.0);
+      }
+      50% {
+        box-shadow:
+          0 0 0 3px rgba(111,78,55,0.35),
+          0 0 16px rgba(111,78,55,0.45);
+      }
+      100% {
+        box-shadow:
+          0 0 0 2px rgba(111,78,55,0.25),
+          0 0 12px rgba(111,78,55,0.35);
+      }
     }
 
     .form-row textarea {
@@ -146,6 +182,7 @@
       min-height: 80px;
     }
 
+    /* FIXED button that goes under the footer */
     .contact-form button {
       background-color: #6f4e37;
       color: white;
@@ -158,15 +195,21 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      margin-top: 2px;
+
+      /* make it fixed at bottom of viewport */
+      position: fixed;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      margin-top: 0;
+
       transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.15s ease;
-      position: relative;
-      z-index: 1;
+      z-index: 0; /* footer (usually higher z-index) will stay on top */
     }
 
     .contact-form button:hover {
       background-color: #553927;
-      transform: translateY(-1px);
+      transform: translateX(-50%) translateY(-2px);
       box-shadow: 0 3px 8px rgba(0,0,0,0.25);
     }
 
@@ -174,7 +217,6 @@
       font-size: 16px;
     }
 
-    /* Optional side image box */
     .contact-image-box {
       margin-top: 16px;
       border-radius: 10px;
@@ -189,7 +231,6 @@
       display: block;
     }
 
-    /* Responsive */
     @media (max-width: 850px) {
       .contact-wrapper {
         flex-direction: column;
@@ -219,7 +260,6 @@
 
   <main>
     <div class="contact-wrapper">
-      <!-- Left side: info + optional image -->
       <section class="contact-info">
         <h2>Visit or Contact Us</h2>
         <p>Have a question, feedback, or a special request? Reach out and the team will get back to you soon.</p>
@@ -245,13 +285,11 @@
           </div>
         </div>
 
-        <!-- Optional decorative image for contact page -->
         <div class="contact-image-box">
           <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=900&q=80" alt="Coffee shop interior" />
         </div>
       </section>
 
-      <!-- Right side: interactive form -->
       <section class="contact-form">
         <h3>Send a Message</h3>
         <small>Fill in the details below and the shop will respond as soon as possible.</small>
